@@ -1,26 +1,34 @@
-<body class="page-background" id="saved-page">
-
-    <div class="container">
-        <h3 id="saved">Saved articles</h3>
-
-        {{#each article}}
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{this.title}}</h5>
-                <a href={{this.link}} target="_blank" class="card-link">New York Times Article</a>
-                <p class="card-text">Article Summary: {{this.summary}}</p>
-
-                <br>
-                <br>
-                <button type="button" class="btn btn-success addNote" data-toggle="modal"
-                    data-target="#noteModal{{this._id}}" data-id={{this._id}}>Add a Note</button>
-                <button type="button" class="btn btn-danger delete" data-id={{this._id}}>Delete</button>
-            </div>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Saved Articles</a>
         </div>
-        {{/each}}
-
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/saved">Saved Articles</a></li>
+        </ul>
     </div>
+</nav>
+<div class="jumbotron text-center">
+    <div class="overlay">
+    </div>
+    <div class="background-image">
+    </div>
+    <div class="caption">
+        <h1>Saved Articles</h1>
+        <p>Your Saved Articles</p>
+    </div>
+</div>
+<div class="container-fluid article-container">
+</div>
 
+<footer class="footer">
+    <div class="container">
+        <p>New York Times Mongo Scraper</p>
+    </div>
+</footer>
 
-    <!--Clicked Notes Modal-->
-    {{#each article}} {{> modal }} {{/each}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script src="../../assets/javascript/saved.js"></script>
